@@ -21,6 +21,7 @@ h1, h2, h3, h4 {
 }
 
 h1 {
+    font-family: Shrikhand;
     font-size: 1.8em;
 }
 
@@ -36,7 +37,6 @@ p, input, i {
 }
 
 .homePage-container h1 {
-    font-family: Shrikhand;
     font-weight: 400;
     width: 100%;
     text-align: center;
@@ -87,18 +87,15 @@ header {
             box-shadow: 0 5px 5px darken($color-box, 20%);
             &:hover {
                 box-shadow: 0 5px 5px darken($color-box, 40%);
-                opacity:0.9;
-               
+                opacity:0.9;               
             }
-
         }
     }
 
     .navbar h2 {
         padding: 40px;
         padding-bottom: 25px;
-        padding-left: 5%;
-        
+        padding-left: 5%;      
     }
     .listbar {
         display: flex;
@@ -157,7 +154,7 @@ main {
     flex-direction: column;
     width:100%;
     max-width: 1440px;
-    height: 1500px;
+    height: 1220px;
     background-color: $color-box;
     margin-top: 50px;
     h2 {
@@ -222,6 +219,33 @@ main {
                 }
                 
             }
+        }
+    }
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-left: 20px;
+    background-color: darken($color-paragraph, 20%);
+    width: 100%;
+    height: 190px;
+    p {
+        font-family: Shrikhand;
+        font-size: 1.2em;
+        color: $color-textButton;
+        padding: 22px 0 15px;
+    }
+    nav {
+        
+        ul li {
+            list-style: none;
+            color: $color-textButton; 
+            padding: 4px 0;
+            font-size: 1.1em;
+        }
+        i {
+            color: $color-textButton;  
         }
     }
 }
