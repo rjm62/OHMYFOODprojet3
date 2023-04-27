@@ -415,7 +415,14 @@ p, input, i {
   color: #99E2D0;
   background-color: #ffffff;
 }
-.menu-container main article section .dish:hover .dish__text {
+.menu-container main article section .dish:hover .dish__text h4 {
+  max-width: 60vw;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu-container main article section .dish:hover .dish__text p {
+  max-width: 60vw;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

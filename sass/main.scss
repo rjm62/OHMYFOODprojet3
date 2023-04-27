@@ -489,9 +489,18 @@ p, input, i {
             }
             .dish:hover {  
                 .dish__text {
+                    h4 {
+                    max-width: 60vw;
                     overflow: hidden;
                     white-space: nowrap;
                     text-overflow: ellipsis;
+                    }
+                    p {
+                    max-width: 60vw;    
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    } 
                 }
                 .dish__priceCoche--coche {
                     display: flex;
