@@ -1,258 +1,15 @@
 @import "./utils/variables";                    /*------------début des variables et miwins-----------*/
-@mixin shadow {
-    box-shadow: 0 5px 5px darken($color-box, 5%);
-}
-
-@mixin shadow-button {
-    box-shadow: 0 5px 5px darken($color-box, 20%);
-}
-
-@mixin shadow-button-hover {
-    box-shadow: 0 5px 5px darken($color-box, 60%);
-}
-
-@mixin button {
-    width: 220px;
-    height: 50px;
-    border-radius: 50px;
-    border: none;
-    font-size: 1em;
-    background:linear-gradient($color-secondary, $color-primary);
-    color: $color-textButton;
-    @include shadow-button;
-    opacity:1;
-    cursor: pointer;
-        &:hover {
-        opacity:0.85;  
-        @include shadow-button-hover;             
-    }
-}
-
-@mixin flexParameters-typeOne {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin flexParameters-typeTwo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin flexParameters-display-and-directionColumn {
-    display: flex;
-    flex-direction: column;
-}
-
-@mixin flexParameters-lisbar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    column-gap: 20px;
-}
-
-@mixin flexParameters-lisbar__link {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-}
+@import "./utils/mixinflex";
+@import "./utils/mixinshadow";
+@import "./components/button";
+@import "./layout/headerHomePage";
+@import "./layout/headerMenu";
+@import "./layout/footer";
+@import "./base/animation";
+@import "./base/base";
 
 
-@mixin flexParameters-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-@mixin flexParameters-section-a-figcaption {
-    display: flex;
-    justify-content: space-between;
-}
-
-@mixin flexParameters-menu-container-main-article {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-
-@mixin flexParameters-menu-container-main-article-section-dish {
-    display: flex;
-    justify-content: space-between;
-}
-
-@mixin flexParameters-menu-container-main-article-section-dish-priceCoche {
-    display: flex;
-    justify-content: center;
-    align-items: end;
-}
-
-@mixin flexParameters-menu-container-main-article-section-dish-priceCoche--coche {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin flexParameters-footer {
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
-    justify-content:flex-end;
-    align-items: end;
-}
-
-@mixin flexParameters-footer-nav {
-    display: flex;
-    justify-content: flex-end;
-}
-
-@mixin flexParameters-footer-nav-navbar {
-        display: flex;
-        flex-wrap: wrap;
-}                                                 /*------fin des variables mixins et import---------*/
-
-* {                                               /*------------début de généralités------------------*/
-    font-family: 'Shrikhand',sans-serif ;
-    font-family: 'Roboto',sans-serif; 
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-
-
-h1, h2, h3, h4 {
-    font-family: 'Roboto';
-    font-weight: 800;
-    color:$color-text;
-}
-
-h1 {
-    font-family: Shrikhand;
-    font-size: 1.8em;
-    font-weight: 400;
-    margin: auto;
-}
-
-h2 {
-    font-size: 1.7em;
-}
-
-p, input, i {
-    font-family: 'Roboto';
-    font-weight: 400; 
-    color:$color-paragraph; 
-    font-size: 1em;
-}                                           /*--------fin de généralités-------------*/
-
- .loader-container { 
-    position: absolute;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    top:0;
-    left:0;
-    z-index: 6;
-    overflow: hidden;
-    width: 100%; 
-    height: 100%; 
-    background-color:$color-box; 
-    animation: loaderStop 0.5s;
-    animation-delay: 3s; 
-    animation-fill-mode: forwards;                     /*--------début de l'animation LOADER-----*/
-
-   
- 
- span {
-    position: relative;
-    font-family: 'Roboto',sans-serif;
-    font-size: 2.5em;
-    font-weight: bold;
-    top:-10%;
-    background:linear-gradient( $color-secondary 30%,$color-primary,$color-tertiary 70%); 
-    background-clip: border-box;          
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: #ffffff00;
-    animation: loader 1.5s  ease-in-out infinite; 
-    animation-iteration-count: 2;
-    opacity: 0;
-
-   
-    }
-    .span--1 {
-        animation-delay: 0.1s;
-        }
-    .span--2 {
-            animation-delay: 0.2s;
-        }
-          
-    .span--3 {    
-            animation-delay: 0.3s;
-        }
-          
-    .span--4 {
-            animation-delay: 0.4s;
-        }
-          
-    .span--5 {
-            animation-delay: 0.5s;
-        }
-          
-    .span--6 {
-            animation-delay: 0.6s;
-        }
-          
-    .span--7 {
-            animation-delay: 0.7s;
-        }
-          
-    .span--8 {
-            animation-delay: 0.8s; 
-        }
- }
-
-    @keyframes loader {
-        0% {
-            opacity: 0;
-        }
-        10% {
-            opacity: 0.3;
-        }
-      
-      20% {
-        opacity: 0.5;
-      }
-        25% {
-            opacity: 1;
-            top: 0;
-            transform: rotateX(180deg);
-            transform: rotateY(0deg);
-            transform:translate(-50px);
-        }
-        100% {
-            opacity: 1;
-            top: 0;
-            transform: rotateX(360deg);
-            transform: rotateY(90deg);
-            transform:translate(-50px);
-    }
-}
-@keyframes loaderStop {
-    0% {
-        left: -1500px;
-    }
-    100% {
-        left:-1500px
-    }
-} 
- 
-
-
-
+                       /*------fin des variables mixins et import---------*/
 .homePage-container {
     max-width: 1440px;
     margin: auto;
@@ -262,126 +19,11 @@ p, input, i {
     }
 }
 
-.homePage-container header {
-    form {
-        @include flexParameters-typeOne;
-        /*display: flex;
-        justify-content: center;
-        align-items:center;*/
-        background-color: darken($color-box, 5%);
-        height: 50px;
-        margin-top: 5px;
-        padding-left: 70px;
-        box-shadow:inset 0px 3px 5px darken($color-box, 20%);
-        input {
-            border:none;
-            text-indent: 20px;
-            font-weight: 550;
-            cursor: pointer;
-            background-color: #ffffff00;
-        }
-    }
-    .presentation {
-        @include flexParameters-display-and-directionColumn;
-        /*display: flex;
-        flex-direction: column;*/
-        align-items: center;
-        background-color: $color-box;
-        padding-bottom: 40px;
-        h2 {
-            padding: 35px 60px 30px 60px;
-            text-align: center;
-        }
-        p {
-            padding:0px 9px 25px 10px;
-            text-align: center;
-        }
-        button {
-            @include button;
-        }
-    }
-    .navbar h2 {
-        padding: 40px 0 25px 20px;  
-        max-width: 1070px;
-        width: 100%;
-        margin: auto;    
-    }
-
-    .listbar {
-        @include flexParameters-lisbar;
-        padding: 0 20px 0 20px;
-        &__link {
-            position: relative;
-            max-width: 320px;
-            width:100%;
-            height: 75px;
-            @include flexParameters-lisbar__link;
-            /*display: flex;
-            justify-content: left;
-            align-items: center;*/
-            padding: 20px 0 20px 20px;
-            margin-bottom: 20px;
-            border-radius: 20px;
-            background-color: $color-box;
-           @include shadow;
-            &--index {
-                @include flexParameters-typeOne; 
-                /*display: flex;
-                justify-content: center;
-                align-items: center;*/
-                position: absolute;
-                left:-10px;
-                width: 25px;
-                height: 25px;
-                border-radius: 12.5px;
-                color: $color-textButton;
-                background-color: $color-primary; 
-            }
-            &--icon {
-                padding-left: 15px;
-                font-size: 1.3em;
-                color: $color-paragraph;
-                }
-            &--colorIcon {   
-                color:$color-primary;
-            } 
-            &--text {
-                font-family:'Roboto' ;
-                padding-left: 20px;
-                font-size: 1.1em;
-                font-weight: 500;
-            }
-            &:hover {
-                background:lighten($color-primary, 35%);
-                cursor: pointer;
-            } 
-        }
-    }
-}
-
 .menu-container {
     max-width: 1440px;
     margin: auto;
 }
-
-.menu-container header {                         /*--------début HEADER des MENUS----------*/
-    display: flex;
-    padding: 10px 50px 5px 20px;
-     a {
-        @include flexParameters-typeOne;
-         /*display: flex;
-        justify-content: center;
-         align-items: center;*/
-        margin-left: 0;
-        text-decoration: none;
-        i {          
-            font-size: 1.3em;
-            font-weight: 700;
-        }
-     }    
- }
- 
-                                               /*............fin du HEADER des menus------------*/                           
+                                                                    
 .homePage-container main {                     /*----------début du MAIN pour la HOME PAGE-----*/
     display: flex;
     flex-direction: column;
@@ -397,11 +39,10 @@ p, input, i {
      }
    
     section {
-        @include flexParameters-section;
-        /*display: flex;
+        display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        align-items: center;*/
+        align-items: center;
         max-width: 1150px;
         margin: auto;
         column-gap: 40px;
@@ -414,8 +55,6 @@ p, input, i {
             figure {
                 @include flexParameters-display-and-directionColumn;
                 position: relative;
-                /*display: flex;
-                flex-direction: column;*/
                 margin-bottom: 20px;
                 height: 250px;
                 background-color: $color-textButton;
@@ -444,9 +83,8 @@ p, input, i {
                     right: 10px;
                 }
                 figcaption {
-                    @include flexParameters-section-a-figcaption;
-                    /*display: flex;
-                    justify-content: space-between;*/
+                    display: flex;
+                    justify-content: space-between;
                     padding: 15px 15px;
                     p {
                         padding: 5px 0;
@@ -500,16 +138,9 @@ p, input, i {
 }                                                /*------- fin du MAIN pour la HOME PAGE ----------*/
 .menu-container main {                         /* début du MAIN pour les pages MENUS----------------*/
     @include flexParameters-typeTwo;
-    /*display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;*/
     width: 100%;
     figure {
         @include flexParameters-typeOne;
-        /*display: flex;
-        justify-content: center;
-        align-items: center;*/
         width: 100%;
         img {
             width: 100%;
@@ -517,12 +148,9 @@ p, input, i {
             object-fit: cover;
         }
     }
+
     article {
         @include flexParameters-typeTwo;
-        /*display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;*/
         max-width: 950px;
         width: 100%;
         padding: 35px 10px 40px 10px;
@@ -533,9 +161,6 @@ p, input, i {
         margin-top: -40px;
         .restaurant-name {
             @include flexParameters-typeOne;
-            /*display: flex;
-            justify-content:center;
-            align-items:center;*/
             width: 100%;
             padding: 0 5px 30px 5px;
                 i{
@@ -550,8 +175,6 @@ p, input, i {
         }
         section {
             @include flexParameters-display-and-directionColumn;
-            /*display: flex;
-            flex-direction: column;*/
             justify-content:center;
             align-items: start;
             min-width: 280px;
@@ -560,7 +183,6 @@ p, input, i {
             padding-bottom: 30px;
             background-color:$color-box;
             opacity: 1;
-            /*animation: plats 5s forwards;*/
             .dishes-type {
                 font-size: 1em;
                 font-weight: 300;
@@ -575,23 +197,10 @@ p, input, i {
                     
                 }
             }
-           /* &:nth-of-type(1) {
-                animation-delay: 0s;
-            } 
-    
-            &:nth-of-type(2) {
-                animation-delay: 2s;
-            } 
-    
-            &:nth-of-type(3) {
-                animation-delay: 4s;
-    
-            }*/
-
+          
             .dish {
-                @include flexParameters-menu-container-main-article-section-dish;
-                /*display: flex;
-                justify-content: space-between;*/
+                display: flex;
+                justify-content: space-between;
                 background-color: $color-textButton;
                 margin: 10px 0 12px 0;
                 border-radius: 10px;
@@ -604,9 +213,7 @@ p, input, i {
                 &__text {
                     width: 100%;
                     @include flexParameters-display-and-directionColumn;
-                    /*display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;*/
+                    /*justify-content: space-between;*/
                     padding: 12px 0 12px 10px;
                     h4 {
                         font-size: 1.2em;
@@ -704,144 +311,13 @@ p, input, i {
             }
         }  
             
-        }     
-        button {
-            @include button;
-        }
+    }   
+    button {
+        @include button;
     }
+}
  
 
                                             /*------fin du MAIN pour les pages MENUS--------*/
-footer {                                                  /*-----début du FOOTER------*/
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
-    justify-content:flex-end;
-    align-items: end;
-    min-height: 80px;
-    padding: 0 0 15px 35px;
-    background-color: darken($color-paragraph, 20%);
-    width: 100%;
-    p {
-        font-family: Shrikhand;
-        font-size: 1.2em;
-        color: $color-textButton;
-        padding: 12px 0 0px;
-        width: 150px;
-        text-align:start;
-        margin-left: 0;
-    }
 
-
-    nav {
-        @include flexParameters-footer-nav;
-        display: flex;
-        justify-content: flex-end;
-        padding-top: 20px;
-        margin-left:auto;
-        margin-right: 0;
-    }
-    nav .navbar {
-        @include flexParameters-footer-nav-navbar;
-        display: flex;
-        flex-wrap: wrap;
-        min-width: 260px;
-        width: 100%;
-        .navbar__link {
-            list-style:none ;
-            width: 200px;
-            padding-bottom: 8px;
-            font-family: 'Roboto';
-            text-align: start;
-            font-size: 1em;
-            &.essai {
-                width:145px
-            }
-        .navbar__icon {   
-            padding-right: 10px; 
-            color: $color-textButton; 
-            &--fontSizePartner {
-            font-size: 0.7em;
-                 }
-            } 
-            a {
-            list-style: none;
-            color:$color-textButton;
-            padding: 4px 0;
-            font-size: 1em;
-            text-decoration: none;
-            }                                              /*-------fin du FOOTER--------*/
-        }
-    }    
-}
-                            
-
-
-/*footer {
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
-    justify-content:flex-end;
-    align-items: end;
-    min-height: 80px;
-    padding-left: 35px;
-    background-color: darken($color-paragraph, 20%);
-    width: 100%;
-    padding-bottom: 15px;
-    p {
-        font-family: Shrikhand;
-        font-size: 1.2em;
-        color: $color-textButton;
-        padding: 12px 0 0px;
-        width: 150px;
-        text-align:start;
-        margin-left: 0;
-    }
-
-
-    nav {
-        display: flex;
-        justify-content: flex-end;
-        padding-top: 20px;
-        margin-left:auto;
-        margin-right: 0 ;
-    }
-    nav .navbar {
-        display: flex;
-        flex-wrap: wrap;
-        min-width: 320px;
-        width: 100%;
-            .navbar__link {
-            list-style:none ;
-            width: 200px;
-            padding-bottom: 8px;
-            font-family: 'Roboto';
-            text-align: start;
-            font-size: 1em;
-            &.essai {
-                width:145px
-            }
-            .navbar__icon {   
-                padding-right: 10px; 
-                color: $color-textButton; 
-                    &--fontSizePartner {
-                    font-size: 0.7em;
-                    }
-                } 
-                a {
-                list-style: none;
-                color:$color-textButton;
-                padding: 4px 0;
-                font-size: 1em;
-                text-decoration: none;
-              }
-        
-            }
-    }
-}*/
-                            
-
-
-
-
-                       
+                

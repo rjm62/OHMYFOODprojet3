@@ -1,0 +1,17 @@
+@mixin flexParameters-typeOne {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexParameters-typeTwo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexParameters-display-and-directionColumn {
+    display: flex;
+    flex-direction: column;
+}

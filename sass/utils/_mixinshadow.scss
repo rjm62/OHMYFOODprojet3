@@ -1,0 +1,11 @@
+@mixin shadow {
+    box-shadow: 0 5px 5px darken($color-box, 5%);
+}
+
+@mixin shadow-button {
+    box-shadow: 0 5px 5px darken($color-box, 20%);
+}
+
+@mixin shadow-button-hover {
+    box-shadow: 0 5px 5px darken($color-box, 60%);
+}

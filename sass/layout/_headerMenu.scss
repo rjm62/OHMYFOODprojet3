@@ -1,0 +1,13 @@
+.menu-container header {                         /*--------début HEADER des MENUS----------*/
+    display: flex;
+    padding: 10px 50px 5px 20px;
+     a {
+        @include flexParameters-typeOne;
+        margin-left: 0;
+        text-decoration: none;
+        i {          
+            font-size: 1.3em;
+            font-weight: 700;
+        }
+     }    
+ }

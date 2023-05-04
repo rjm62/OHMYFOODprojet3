@@ -1,0 +1,16 @@
+@mixin button {
+    width: 220px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    font-size: 1em;
+    background:linear-gradient($color-secondary, $color-primary);
+    color: $color-textButton;
+    @include shadow-button;
+    opacity:1;
+    cursor: pointer;
+        &:hover {
+        opacity:0.85;  
+        @include shadow-button-hover;             
+    }
+}

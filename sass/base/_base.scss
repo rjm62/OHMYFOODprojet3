@@ -1,0 +1,33 @@
+* {                                               /*------------début de généralités------------------*/
+    font-family: 'Shrikhand',sans-serif ;
+    font-family: 'Roboto',sans-serif; 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+h1, h2, h3, h4 {
+    font-family: 'Roboto';
+    font-weight: 800;
+    color:$color-text;
+}
+
+h1 {
+    font-family: Shrikhand;
+    font-size: 1.8em;
+    font-weight: 400;
+    margin: auto;
+}
+
+h2 {
+    font-size: 1.7em;
+}
+
+p, input, i {
+    font-family: 'Roboto';
+    font-weight: 400; 
+    color:$color-paragraph; 
+    font-size: 1em;
+}                                           /*--------fin de généralités-------------*/
