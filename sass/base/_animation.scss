@@ -97,4 +97,46 @@
     100% {
         left:-1500px
     }
-} 
+}                             /*---------fin animation LOADER------------*/
+
+
+.heart {                          /*----début animation du COEUR-------*/
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    font-size: 1.5em;
+     
+    .empty {  
+        position: absolute;
+        top:0;
+        left: 0;
+        z-index: 4;
+        opacity:1;
+       transition: 0.8s;
+        &:hover {
+            opacity: 0;
+        }
+        &:hover + .full {
+            opacity: 1;
+        }
+    }
+
+    .full {
+        position: absolute;
+        top:0;
+        left: 0;
+        z-index: 1;
+        font-weight: bold;
+        background:linear-gradient($color-secondary, $color-primary); 
+        background-clip: border-box;          
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: #ffffff00;
+        opacity:0;
+        transition: 0.8s;
+       
+    }
+}                   /*---------- fin animation du coeur-------------*/

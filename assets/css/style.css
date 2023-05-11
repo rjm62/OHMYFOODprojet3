@@ -269,7 +269,46 @@ footer nav .navbar .navbar__link a {
   100% {
     left: -1500px;
   }
+} /*---------fin animation LOADER------------*/
+.heart { /*----début animation du COEUR-------*/
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  font-size: 1.5em;
 }
+.heart .empty {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  opacity: 1;
+  transition: 0.8s;
+}
+.heart .empty:hover {
+  opacity: 0;
+}
+.heart .empty:hover + .full {
+  opacity: 1;
+}
+.heart .full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  font-weight: bold;
+  background: linear-gradient(#FF79DA, #9356DC);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  opacity: 0;
+  transition: 0.8s;
+}
+
+/*---------- fin animation du coeur-------------*/
 * { /*------------début de généralités------------------*/
   font-family: "Shrikhand", sans-serif;
   font-family: "Roboto", sans-serif;
@@ -382,47 +421,50 @@ p, input, i {
   display: flex;
   justify-content: space-between;
   padding: 15px 15px;
+  /*.heart {
+      position: relative;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      font-size: 1.5em;
+
+      .empty {  
+          position: absolute;
+          top:0;
+          left: 0;
+          z-index: 4;
+          opacity:1;
+         transition: 0.8s;
+          &:hover {
+              opacity: 0;
+          }
+          &:hover + .full {
+              opacity: 1;
+          }
+      }
+
+      .full {
+          position: absolute;
+          top:0;
+          left: 0;
+          z-index: 1;
+          font-weight: bold;
+          background:linear-gradient($color-secondary, $color-primary); 
+          background-clip: border-box;          
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: #ffffff00;
+          opacity:0;
+          transition: 0.8s;
+
+      }
+  }*/
 }
 .homePage-container main section a figure figcaption p {
   padding: 5px 0;
   font-weight: 300;
-}
-.homePage-container main section a figure figcaption .heart {
-  position: relative;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  font-size: 1.5em;
-}
-.homePage-container main section a figure figcaption .heart .empty {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 4;
-  opacity: 1;
-  transition: 0.8s;
-}
-.homePage-container main section a figure figcaption .heart .empty:hover {
-  opacity: 0;
-}
-.homePage-container main section a figure figcaption .heart .empty:hover + .full {
-  opacity: 1;
-}
-.homePage-container main section a figure figcaption .heart .full {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  font-weight: bold;
-  background: linear-gradient(#FF79DA, #9356DC);
-  background-clip: border-box;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: rgba(255, 255, 255, 0);
-  opacity: 0;
-  transition: 0.8s;
 }
 
 /*------- fin du MAIN pour la HOME PAGE ----------*/
@@ -465,14 +507,14 @@ p, input, i {
   width: 100%;
   padding: 0 5px 30px 5px;
 }
-.menu-container main article .restaurant-name i {
-  font-size: 1.6em;
-  padding-left: 20px;
+.menu-container main article .restaurant-name .heart {
+  padding-bottom: 25px;
 }
 .menu-container main article .restaurant-name h2 {
   font-family: Shrikhand;
   font-size: 1.3em;
   font-weight: 500;
+  padding-right: 50px;
 }
 .menu-container main article section {
   display: flex;
